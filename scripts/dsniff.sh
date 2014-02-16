@@ -1,7 +1,7 @@
 #!/bin/bash
 #Cleartext password sniffing on all available interfaces
-if [ ! -d "/opt/blackarch/captures/passwords/" ]; then
-  mkdir -p /opt/blackarch/captures/passwords/
+if [ ! -d "/opt/archassault/captures/passwords/" ]; then
+  mkdir -p /opt/archassault/captures/passwords/
 fi
 ##################################################
 f_interface(){
@@ -74,7 +74,7 @@ clear
 echo
 echo "Would you like to log data?"
 echo
-echo "Captures saved to /opt/blackarch/captures/passwords/"
+echo "Captures saved to /opt/archassault/captures/passwords/"
 echo
 echo "1. Yes"
 echo "2. No "
@@ -88,7 +88,7 @@ read -p "Choice: " logchoice
 if [ $logchoice -eq 1 ]
 then
 
-        filename=/opt/blackarch/captures/passwords/$(date +%F-%H%M).log
+        filename=/opt/archassault/captures/passwords/$(date +%F-%H%M).log
 
         ettercap -i $interface -u -T -q | tee $filename
 

@@ -2,13 +2,13 @@
 #Bluetooth scanning / loggin script
 
 hciconfig hci0 up
-if [ ! -d "/opt/blackarch/captures/bluetooth/" ]; then
-  mkdir -p /opt/blackarch/captures/bluetooth/
+if [ ! -d "/opt/archassault/captures/bluetooth/" ]; then
+  mkdir -p /opt/archassault/captures/bluetooth/
 fi
-cd /opt/blackarch/captures/bluetooth/
+cd /opt/archassault/captures/bluetooth/
 
 echo
-echo "Bluetooth Device Scan log saved in /opt/blackarch/captures/bluetooth/"
+echo "Bluetooth Device Scan log saved in /opt/archassault/captures/bluetooth/"
 echo
 
 #btscanlogname=bluelog$(date +%F-%H%M).log

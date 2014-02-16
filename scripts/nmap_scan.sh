@@ -1,7 +1,7 @@
 #!/bin/bash
 #script to scan current network
-if [ ! -d "/opt/blackarch/captures/nmap_scans/" ]; then
-  mkdir -p /opt/blackarch/captures/nmap_scans/
+if [ ! -d "/opt/archassault/captures/nmap_scans/" ]; then
+  mkdir -p /opt/archassault/captures/nmap_scans/
 fi
 ##################################################
 f_interface(){
@@ -53,14 +53,14 @@ f_scan(){
 
 network=$(ifconfig $interface| awk -F ":"  '/inet addr/{split($2,a," ");print a[1]}'|awk -F'.' '{print $1"."$2"."$3"."}')
 
-cd /opt/blackarch/captures/nmap_scans/
+cd /opt/archassault/captures/nmap_scans/
 
-filename1="/opt/blackarch/captures/nmap_scans/host_scan$(date +%F-%H%M).txt"
-filename2="/opt/blackarch/captures/nmap_scans/service_scan$(date +%F-%H%M).txt"
+filename1="/opt/archassault/captures/nmap_scans/host_scan$(date +%F-%H%M).txt"
+filename2="/opt/archassault/captures/nmap_scans/service_scan$(date +%F-%H%M).txt"
 
 nmap -sP $network* |tee $filename1
 echo
-echo "Hostscan saved to /opt/blackarch/captures/nmap_scans/host_scan$(date +%F-%H%M).txt"
+echo "Hostscan saved to /opt/archassault/captures/nmap_scans/host_scan$(date +%F-%H%M).txt"
 echo
 echo
 
@@ -76,7 +76,7 @@ if [ $scanagain -eq 1 ]
 then
   nmap -sV $network* |tee $filename2
   echo
-  echo "Hostscan saved to /opt/blackarch/captures/nmap_scans/service_scan$(date +%F-%H%M).txt"
+  echo "Hostscan saved to /opt/archassault/captures/nmap_scans/service_scan$(date +%F-%H%M).txt"
   echo
   echo
 fi

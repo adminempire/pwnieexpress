@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ ! -d "/opt/blackarch/captures/" ]; then
-  mkdir -p /opt/blackarch/captures/
+if [ ! -d "/opt/archassault/captures/" ]; then
+  mkdir -p /opt/archassault/captures/
 fi
-cd /opt/blackarch/captures/
+cd /opt/archassault/captures/
 setoolkit

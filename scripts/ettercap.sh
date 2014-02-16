@@ -1,7 +1,7 @@
 #!/bin/bash
 #Ettercap arp cache poison script script
-if [ ! -d "/opt/blackarch/captures/ettercap/" ]; then
-  mkdir -p /opt/blackarch/captures/ettercap/
+if [ ! -d "/opt/archassault/captures/ettercap/" ]; then
+  mkdir -p /opt/archassault/captures/ettercap/
 fi
 ##################################################
 f_interface(){
@@ -70,7 +70,7 @@ clear
 echo
 echo "Would you like to log data?"
 echo
-echo "Captures saved to /opt/blackarch/captures/ettercap/"
+echo "Captures saved to /opt/archassault/captures/ettercap/"
 echo
 echo "1. Yes"
 echo "2. No "
@@ -84,7 +84,7 @@ f_run(){
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-filename=/opt/blackarch/captures/ettercap/ettercap$(date +%F-%H%M)
+filename=/opt/archassault/captures/ettercap/ettercap$(date +%F-%H%M)
 
 clear
 echo

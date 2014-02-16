@@ -4,10 +4,10 @@
 #set ctrl c (break) to gracefully take the card out of monitor mode
 trap f_cleanup INT
 trap f_cleanup KILL
-if [ ! -d "/opt/blackarch/captures/wireless/" ]; then
-  mkdir -p /opt/blackarch/captures/wireless/
+if [ ! -d "/opt/archassault/captures/wireless/" ]; then
+  mkdir -p /opt/archassault/captures/wireless/
 fi
-cd /opt/blackarch/captures/wireless/
+cd /opt/archassault/captures/wireless/
 
 f_logornot(){
 
@@ -15,7 +15,7 @@ f_logornot(){
 	echo
 	echo "Would you like to save an airodump capture?"
 	echo
-	echo "Captures saved to /opt/blackarch/captures/wireless/"
+	echo "Captures saved to /opt/archassault/captures/wireless/"
 	echo
 	echo "1. Yes"
 	echo "2. No "

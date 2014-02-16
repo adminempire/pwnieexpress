@@ -5,8 +5,8 @@
 #Date: Feb 2013
 #Rev: 1.0
 #BlackArch Port: Jeremy Lynch
-if [ ! -d "/opt/blackarch/captures/stringwatch/" ]; then
-  mkdir -p /opt/blackarch/captures/stringwatch/
+if [ ! -d "/opt/archassault/captures/stringwatch/" ]; then
+  mkdir -p /opt/archassault/captures/stringwatch/
 fi
 
 ##################################################
@@ -78,7 +78,7 @@ f_savecap(){
 
 echo
 echo
-echo "Would you like to save a strings log to /opt/blackarch/captures/stringswatch/ ?"
+echo "Would you like to save a strings log to /opt/archassault/captures/stringswatch/ ?"
 echo
 echo "1. Yes"
 echo "2. No"
@@ -95,7 +95,7 @@ echo
 
 #########################################
 f_yes(){
-	filename=/opt/blackarch/captures/stringswatch/strings$(date +%F-%H%M).log
+	filename=/opt/archassault/captures/stringswatch/strings$(date +%F-%H%M).log
 
 	tshark -i $interface -q -w - | strings -n 8 | tee $filename
 }

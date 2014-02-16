@@ -1,7 +1,7 @@
 #!/bin/bash
 #Tshark script for sniffing on available interfaces
-if [ ! -d "/opt/blackarch/captures/tshark/" ]; then
-  mkdir -p /opt/blackarch/captures/tshark/
+if [ ! -d "/opt/archassault/captures/tshark/" ]; then
+  mkdir -p /opt/archassault/captures/tshark/
 fi
 ##################################################
 f_interface(){
@@ -71,7 +71,7 @@ f_savecap(){
 
 echo
 echo
-echo "Would you like to save a packet capture to /opt/blackarch/captures/tshark?"
+echo "Would you like to save a packet capture to /opt/archassault/captures/tshark?"
 echo
 echo "1. Yes"
 echo "2. No"
@@ -90,7 +90,7 @@ echo
 f_yes(){
 	filename=tshark$(date +%F-%H%M).cap
 
-        tshark -i $interface -w /opt/blackarch/captures/tshark/$filename -S
+        tshark -i $interface -w /opt/archassault/captures/tshark/$filename -S
 
 }
 

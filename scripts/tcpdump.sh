@@ -1,7 +1,7 @@
 #!/bin/bash
 #TcpDump script for sniffing on available interfaces
-if [ ! -d "/opt/blackarch/captures/tcpdump/" ]; then
-  mkdir -p /opt/blackarch/captures/tcpdump/
+if [ ! -d "/opt/archassault/captures/tcpdump/" ]; then
+  mkdir -p /opt/archassault/captures/tcpdump/
 fi
 ##################################################
 f_interface(){
@@ -70,7 +70,7 @@ f_savecap(){
 
 echo
 echo
-echo "Would you like to save a packet capture to /opt/blackarch/captures/tcpdump?"
+echo "Would you like to save a packet capture to /opt/archassault/captures/tcpdump?"
 echo "Note you can't see packets on screen when writing to a file"
 echo
 echo "1. Yes"
@@ -90,7 +90,7 @@ echo
 f_yes(){
 	filename=tcpdump$(date +%F-%H%M).cap
 
-        tcpdump -s0 -vvv -e -xx -w /opt/blackarch/captures/tcpdump/$filename -i $interface
+        tcpdump -s0 -vvv -e -xx -w /opt/archassault/captures/tcpdump/$filename -i $interface
 
 }
 

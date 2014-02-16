@@ -5,8 +5,8 @@
 #Company: Pwnie Express
 #Version: 2.0
 #BlackArch Port: Jeremy Lynch
-if [ ! -d "/opt/blackarch/captures/wireless/" ]; then
-  mkdir -p /opt/blackarch/captures/wireless/
+if [ ! -d "/opt/archassault/captures/wireless/" ]; then
+  mkdir -p /opt/archassault/captures/wireless/
 fi
 #Set ctrl c (break) to stop evilap gracefully and restore orignal hostname and mac address
 trap f_endclean INT
@@ -128,7 +128,7 @@ f_preplaunch(){
 #########################################
 f_evilap(){
   #Log path and name
-  logname="/opt/blackarch/captures/wireless/evilap-$(date +%s).log"
+  logname="/opt/archassault/captures/wireless/evilap-$(date +%s).log"
 
   #Start Airbase-ng with -P for preferred networks
   airbase-ng -P -C 70 -c $channel -e "$ssid" -v mon0 > $logname 2>&1 &
@@ -150,7 +150,7 @@ f_evilap(){
 #########################################
 f_niceap(){
   #Log path and name
-  logname="/opt/blackarch/captures/wireless/evilap-$(date +%s).log"
+  logname="/opt/archassault/captures/wireless/evilap-$(date +%s).log"
 
   #Start Airbase-ng with -P for preferred networks
   airbase-ng -c $channel -e "$ssid" -v mon0 > $logname 2>&1 &

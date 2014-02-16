@@ -1,9 +1,9 @@
 #!/bin/bash
 #Script to run wifite
-if [ ! -d "/opt/blackarch/captures/wpa_handshakes/" ]; then
-  mkdir -p /opt/blackarch/captures/wpa_handshakes/
+if [ ! -d "/opt/archassault/captures/wpa_handshakes/" ]; then
+  mkdir -p /opt/archassault/captures/wpa_handshakes/
 fi
-cd /opt/blackarch/captures/wpa_handshakes/
+cd /opt/archassault/captures/wpa_handshakes/
 
 wifite
 

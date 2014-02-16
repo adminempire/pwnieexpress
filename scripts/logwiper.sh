@@ -7,24 +7,24 @@
 #BlackArch Port: Jeremy Lynch
 
 CAPTURE_FILES=(
-  "/opt/blackarch/captures/*.cap"
-  "/opt/blackarch/captures/*.log"
-  "/opt/blackarch/captures/tshark/*"
-  "/opt/blackarch/captures/tcpdump/*"
-  "/opt/blackarch/captures/ettercap/*"
-  "/opt/blackarch/captures/bluetooth/*"
-  "/opt/blackarch/captures/stringswatch/*"
-  "/opt/blackarch/captures/wireless/*"
-  "/opt/blackarch/captures/nmap_scans/*"
-  "/opt/blackarch/captures/wpa_handshakes/*"
-  "/opt/blackarch/captures/passwords/*"
+  "/opt/archassault/captures/*.cap"
+  "/opt/archassault/captures/*.log"
+  "/opt/archassault/captures/tshark/*"
+  "/opt/archassault/captures/tcpdump/*"
+  "/opt/archassault/captures/ettercap/*"
+  "/opt/archassault/captures/bluetooth/*"
+  "/opt/archassault/captures/stringswatch/*"
+  "/opt/archassault/captures/wireless/*"
+  "/opt/archassault/captures/nmap_scans/*"
+  "/opt/archassault/captures/wpa_handshakes/*"
+  "/opt/archassault/captures/passwords/*"
 )
 
 MISC_FILES=(
-  "/opt/blackarch/easy-creds/easy-creds-*"
-  "/opt/blackarch/easy-creds/*.txt"
-  "/opt/blackarch/wireless/wifite/cracked.txt"
-  "/opt/blackarch/wireless/wifite/hs/"
+  "/opt/archassault/easy-creds/easy-creds-*"
+  "/opt/archassault/easy-creds/*.txt"
+  "/opt/archassault/wireless/wifite/cracked.txt"
+  "/opt/archassault/wireless/wifite/hs/"
 )
 
 set_choosewisely(){
@@ -50,7 +50,7 @@ set_clearhistory(){
 }
 
 clear_capture_files(){
-  echo 'Removing logs and captures from /opt/blackarch/captures/
+  echo 'Removing logs and captures from /opt/archassault/captures/
 
   '
   for file in "${CAPTURE_FILES[@]}"

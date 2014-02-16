@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script to start Kismet wireless sniffer
-if [ ! -d "/opt/blackarch/captures/wireless/" ]; then
-  mkdir -p /opt/blackarch/captures/wireless/
+if [ ! -d "/opt/archassault/captures/wireless/" ]; then
+  mkdir -p /opt/archassault/captures/wireless/
 fi
 #Set term type to vt100 for now, only thing that displays curses properly atm
 export TERM=vt100
@@ -18,13 +18,13 @@ f_endclean(){
 ##################################################
 clear
 echo
-echo  "Kismet captures saved to /opt/blackarch/captures/wireless/"
+echo  "Kismet captures saved to /opt/archassault/captures/wireless/"
 echo
 echo
 
 wait 3
 
-cd /opt/blackarch/captures/wireless/
+cd /opt/archassault/captures/wireless/
 
 kismet
 
