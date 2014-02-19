@@ -4,7 +4,7 @@
 #Authors: Awk, Sedd, Pasties
 #Company: Pwnie Express
 #Version: 2.0
-#BlackArch Port: Jeremy Lynch
+#Arch Port: Jeremy Lynch
 if [ ! -d "/opt/archassault/captures/wireless/" ]; then
   mkdir -p /opt/archassault/captures/wireless/
 fi

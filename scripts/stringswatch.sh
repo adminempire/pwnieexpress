@@ -4,7 +4,7 @@
 #Company: Pwnie Express
 #Date: Feb 2013
 #Rev: 1.0
-#BlackArch Port: Jeremy Lynch
+#Arch Port: Jeremy Lynch
 if [ ! -d "/opt/archassault/captures/stringwatch/" ]; then
   mkdir -p /opt/archassault/captures/stringwatch/
 fi

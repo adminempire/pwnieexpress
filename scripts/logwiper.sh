@@ -4,7 +4,7 @@
 #Company: Pwnie Express
 #Date: March 1 2013
 #Rev: 1.1
-#BlackArch Port: Jeremy Lynch
+#Arch Port: Jeremy Lynch
 
 CAPTURE_FILES=(
   "/opt/archassault/captures/*.cap"
