@@ -15,7 +15,7 @@ trap f_endclean KILL
 
 ##################################################
 f_restore_ident(){
-  ifconfig wlan1 down
+  ip link set wlan1 down
   macchanger -p wlan1
   hostname pwnpad
 }
@@ -36,7 +36,7 @@ f_clean_up(){
 f_endclean(){
   f_clean_up
   f_restore_ident
-  ifconfig wlan1 down
+  ip link set wlan1 down
   exit
 }
 
@@ -104,14 +104,14 @@ echo
 f_preplaunch(){
   #Change the hostname and mac address randomly
 
-  ifconfig wlan1 down
+  ip link set wlan1 down
 
   macchanger -r wlan1
 
   echo "Rolling MAC address and Hostname randomly:"
   echo
 
-  hn=`ifconfig wlan1 |grep HWaddr |awk '{print$5}' |awk -F":" '{print$1$2$3$4$5$6}'`
+  hn=`ip addr | grep -A 3 wlan1 | grep ether | awk '{print$2}' | awk -F":" '{print$1$2$3$4$5$6}'`
   hostname $hn
 
   echo $hn
@@ -135,7 +135,9 @@ f_evilap(){
   sleep 2
 
   #Bring up virtual interface at0
-  ifconfig at0 up 192.168.7.1 netmask 255.255.255.0
+  #ifconfig at0 up 192.168.7.1 netmask 255.255.255.0
+	ip link set at0 up
+	ip addr add 192.168.7.1/24 dev at0
 
   #Start DHCP server on at0
   dhcpd -cf /etc/dhcp/dhcpd.conf -pf /var/run/dhcpd.pid at0
@@ -157,7 +159,9 @@ f_niceap(){
   sleep 2
 
   #Bring up virtual interface at0
-  ifconfig at0 up 192.168.7.1 netmask 255.255.255.0
+  #ifconfig at0 up 192.168.7.1 netmask 255.255.255.0
+	ip link set at0 up
+  ip addr add 192.168.7.1/24 dev at0
 
   #Start DHCP server on at0
   dhcpd -cf /etc/dhcp/dhcpd.conf -pf /var/run/dhcpd.pid at0

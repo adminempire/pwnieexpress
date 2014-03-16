@@ -52,7 +52,7 @@ echo
 echo Rolling MAC address of wlan0 to something random...
 echo To specify MAC to spoof run sudo macchanger -m xx:xx:xx:xx:xx:xx
 echo 
-ifconfig $interface down
+ip link set $interface down
 macchanger -r $interface
 sleep 1
 echo
@@ -63,7 +63,7 @@ echo
 echo
 echo Rolling hostname for further obscuring...
 echo 
-mac=$(ifconfig $interface |grep HWaddr |awk '{print$5}' |awk -F":" '{print$1$2$3$4$5$6}')
+mac=$(ip addr | grep -A 3 $interface | grep ether | awk '{print$2}' | awk -F":" '{print$1$2$3$4$5$6}')
 hn=$mac
 sudo hostname $hn
 echo hostname $hn
@@ -71,8 +71,8 @@ echo
 echo Hostname is now rolled!
 echo 
 
-ifconfig $interface up
-ifconfig $interface
+ip link set $interface up
+ip addr | grep -A 5 $interface
 
 echo 
 echo "MAC for " $interface " and Hostname are now rolled!"

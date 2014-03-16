@@ -87,6 +87,6 @@ f_scan
 
 if [ $interface -eq wlan1 ]
 then
-  ifconfig wlan1 down
+  ip link set wlan1 down
 fi
 

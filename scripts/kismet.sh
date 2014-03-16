@@ -11,8 +11,8 @@ trap f_endclean INT
 trap f_endclean KILL
 
 f_endclean(){
-  ifconfig wlan1mon down
-  ifconfig wlan1 down
+  ip link set wlan1mon down
+  ip link set wlan1 down
 }
 
 ##################################################

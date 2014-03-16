@@ -18,5 +18,5 @@ then
 fi
 
 airmon-ng stop mon0
-ifconfig wlan1 down
+ip link set wlan1 down
 
